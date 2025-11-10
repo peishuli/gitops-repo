@@ -7,15 +7,16 @@ spec:
   # goTemplate: true
   # goTemplateOptions: ["missingkey=error"]
   generators:
-    - clusters:
-        selector:
-          matchLabels:
-            environment: 'dev'
-          # matchExpressions:
-          #   - key: environment
-          #     operator: In
-          #     values:
-          #       - "dev"
+    - clusters: {}
+    # - clusters:
+    #     selector:
+    #       matchLabels:
+    #         environment: 'dev'
+    #       # matchExpressions:
+    #       #   - key: environment
+    #       #     operator: In
+    #       #     values:
+    #       #       - "dev"
   template:
     metadata:
       name: '{{name}}-kube-prometheus-stack'
