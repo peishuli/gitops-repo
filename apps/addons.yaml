@@ -10,7 +10,7 @@ spec:
     - clusters:
         selector:
           matchLabels:
-            environment: "dev"
+            environment: 'dev'
           # matchExpressions:
           #   - key: environment
           #     operator: In
