@@ -29,6 +29,6 @@ spec:
           recurse: true
       destination:
         namespace: 'argocd'
-        server: '{{ `{{.server}}` }}'
+        name: {{ name }}
       syncPolicy:
         automated: {}
