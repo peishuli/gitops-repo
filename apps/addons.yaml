@@ -7,8 +7,13 @@ spec:
   generators:
     - clusters:
         selector:
-          matchLabels:
-            environment: dev
+          # matchLabels:
+          #   environment: dev
+          matchExpressions:
+            - key: environment
+              operator: In
+              values:
+                - "dev"
   template:
     metadata:
       name: 'bootstrap-addons'
