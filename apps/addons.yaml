@@ -29,6 +29,7 @@ spec:
           recurse: true
       destination:
         namespace: 'argocd'
-        name: {{ name }}
+        server: https://kubernetes.default.svc
+        # name: {{ name }}
       syncPolicy:
         automated: {}
