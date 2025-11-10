@@ -4,19 +4,16 @@ metadata:
   name: kube-prometheus-stack
   namespace: argocd
 spec:
-  # goTemplate: true
-  # goTemplateOptions: ["missingkey=error"]
   generators:
-    - clusters: {}
-    # - clusters:
-    #     selector:
-    #       matchLabels:
-    #         environment: 'dev'
-    #       # matchExpressions:
-    #       #   - key: environment
-    #       #     operator: In
-    #       #     values:
-    #       #       - "dev"
+    - clusters:
+        selector:
+          matchLabels:
+            environment: 'dev'
+          # matchExpressions:
+          #   - key: environment
+          #     operator: In
+          #     values:
+          #       - "dev"
   template:
     metadata:
       name: '{{name}}-kube-prometheus-stack'
@@ -30,7 +27,7 @@ spec:
           valueFiles:
             - values.yaml
       destination:
-        name: '{{ name }}' #https://kubernetes.default.svc  # Add this line to specify the destination server
+        server: https://kubernetes.default.svc  # Add this line to specify the destination server
         namespace: monitoring
       syncPolicy:
         automated: {}
