@@ -4,6 +4,8 @@ metadata:
   name: cluster-addons
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
     - clusters:
         selector:
@@ -27,6 +29,6 @@ spec:
           recurse: true
       destination:
         namespace: 'argocd'
-        name: '{{name}}'
+        server: '{{.server}}'
       syncPolicy:
         automated: {}
