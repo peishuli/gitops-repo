@@ -18,7 +18,7 @@ spec:
           #       - "dev"
   template:
     metadata:
-      name: 'kube-prometheus-stack'
+      name: '{{name}}-kube-prometheus-stack'
     spec:
       project: default
       source:
